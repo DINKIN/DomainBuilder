@@ -1,0 +1,34 @@
+﻿<Window x:Class="DomainBuilder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Five9 Domain Builder" Height="634" Width="525" ResizeMode="CanResize" Loaded="Window_Loaded" Icon="/DomainBuilder;component/app.ico">
+    <Grid>
+        <GroupBox Header="Administrator Credentials" Height="105" Margin="12,12,12,0" Name="groupBox1" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="Username:" Height="28" HorizontalAlignment="Left" Margin="6,21,0,0" Name="label1" VerticalAlignment="Top" />
+                <TextBox Height="23" Margin="78,23,90,0" Name="tbxUsername" VerticalAlignment="Top" Text="" />
+                <Label Content="Password:" Height="28" HorizontalAlignment="Left" Margin="6,48,0,0" Name="label2" VerticalAlignment="Top" />
+                <PasswordBox Height="23" Margin="78,52,90,0" Name="pbxPassword" VerticalAlignment="Top" Password="" />
+                <Button Content="Connect" Height="23" HorizontalAlignment="Right" Margin="0,52,6,0" Name="btnConnect" VerticalAlignment="Top" Width="75" Click="btnConnect_Click" />
+                <Image HorizontalAlignment="Right" Margin="0,6,-6,0" Name="image1" Stretch="Fill" Width="90" Source="/DomainBuilder;component/Five9Logo.png" Height="40" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Options" Margin="12,123,12,0" Name="groupBox2" Height="147" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="Username Suffix:" Height="28" HorizontalAlignment="Left" Margin="6,35,0,0" Name="label3" VerticalAlignment="Top" />
+                <Label Content="agent1@" Height="28" HorizontalAlignment="Left" Margin="122,35,0,0" Name="label4" VerticalAlignment="Top" />
+                <TextBox Height="23" Margin="177,37,6,0" Name="tbxUsernameSuffix" VerticalAlignment="Top" Text="" IsEnabled="False" />
+                <Label Content="Inbound DNIS:" Height="28" HorizontalAlignment="Left" Margin="6,64,0,0" Name="label5" VerticalAlignment="Top" />
+                <CheckBox Content="Enable Reason Codes" Height="16" HorizontalAlignment="Left" Margin="122,98,0,0" Name="chkEnableReasonCodes" VerticalAlignment="Top" IsChecked="False" IsEnabled="False" />
+                <ComboBox Height="23" Margin="122,69,6,0" Name="cbxInboundDNIS" VerticalAlignment="Top" IsEnabled="False" />
+                <Label Content="Configuration:" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label6" VerticalAlignment="Top" />
+                <TextBox Height="23" Margin="122,8,90,0" Name="tbxConfigFilename" VerticalAlignment="Top" IsReadOnly="True" Text=".\DomainDefinition.json" IsEnabled="False" />
+                <Button Content="Browse" Height="23" HorizontalAlignment="Right" Margin="0,7,6,0" Name="btnBrowse" VerticalAlignment="Top" Width="75" Click="btnBrowse_Click" IsEnabled="False" />
+            </Grid>
+        </GroupBox>
+        <ProgressBar Height="24" Margin="12,0,93,46" Name="pbrProgress" VerticalAlignment="Bottom" />
+        <Button Content="Build" Height="23" HorizontalAlignment="Right" Margin="0,0,12,12" Name="btnBuild" VerticalAlignment="Bottom" Width="75" Click="btnBuild_Click" IsEnabled="False" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,0,12,46" Name="btnCancel" VerticalAlignment="Bottom" Width="75" Click="btnCancel_Click" IsEnabled="False" />
+        <ListBox Margin="12,276,12,76" Name="lbxStatus" />
+    </Grid>
+</Window>

@@ -1,0 +1,163 @@
+﻿{
+	"skills": [
+		{
+			"skillInfo": {
+				"name": "Inbound Skill",
+				"description": "Skill for Inbound calls",
+				"routeVoiceMails": true
+			}
+		},
+		{
+			"skillInfo": {
+				"name": "Outbound Skill",
+				"description": "Skill for Outbound calls",
+				"routeVoiceMails": false
+			}
+		},
+		{
+			"skillInfo": {
+				"name": "Preview Skill",
+				"description": "Skill for Preview calls",
+				"routeVoiceMails": false
+			}
+		}
+	],
+
+	"users": [
+		{
+			"userGeneralInfo": {
+				"userName": "agent1",
+				"password": "agent1",
+				"firstName": "Agent",
+				"lastName": "One",
+				"active": true,
+				"canChangePassword": true,
+				"mustChangePassword": false,
+				"extension": 1
+			}
+		},
+		{
+			"userGeneralInfo": {
+				"userName": "agent2",
+				"password": "agent2",
+				"firstName": "Agent",
+				"lastName": "Two",
+				"fullName": "Agent Two",
+				"active": true,
+				"canChangePassword": true,
+				"mustChangePassword": false,
+				"extension": 1
+			}
+		}
+	],
+
+	"userProfiles": [
+		{
+			"name": "Agents",
+			"description": "Sample user profile for Agents",
+			"skills": ["Inbound Skill", "Outbound Skill", "Preview Skill"],
+			"agents": ["agent1", "agent2"],
+			"permissions": [
+				"AddingToDNC",
+				"BrowseWebInEmbeddedBrowser",
+				"CallForwarding",
+				"CanConfigureAutoAnswer",
+				"CanParkCall",
+				"CanPlaceCallOnHold",
+				"CanRejectCalls",
+				"CanWrapCall",
+				"ChangePreviewPreferences",
+				"CreateCallbacks",
+				"CreateChatSessions",
+				"CreateConferenceWithAgents",
+				"CreateConferenceWithExternalCalls",
+				"CreateConferenceWithInboundCampaigns",
+				"CreateConferenceWithSkills",
+				"DeleteVoiceMail",
+				"DialManuallyDNC",
+				"MakeCallToAgents",
+				"MakeCallToExternalCalls",
+				"MakeCallToSkills",
+				"MakeRecordings",
+				"MakeTransferToAgents",
+				"MakeTransferToExternalCalls",
+				"MakeTransferToInboundCampaigns",
+				"MakeTransferToSkills",
+				"ManageAvailabilityBySkill",
+				"PlayAudioFiles",
+				"ProcessVoiceMail",
+				"ReceiveTransfer",
+				"RecycleDispositionAllowed",
+				"SendMessages",
+				"SkipCrmInPreviewDialMode",
+				"TrainingMode",
+				"TransferVoiceMail"
+			]
+		}
+	],
+
+	"callingLists": [
+		"Outbound List",
+		"Preview List"
+	],
+
+	"ivrScripts": [
+		{
+			"name": "Inbound IVR",
+			"description": "Sample Inbound IVR Script",
+			"file": "Inbound IVR.five9ivr"
+		}
+	],
+
+	"dispositions": [
+		{
+			"name": "Call Completed",
+			"description": "Sample Disposition"
+		}
+	],
+
+	"campaigns": [
+		{
+			"type": "Inbound",
+			"name": "Inbound Campaign",
+			"description": "Sample Inbound Campaign",
+			"maxNumOfLines": 1,
+			"ivrScript": "Inbound IVR",
+			"dispositions": [
+				"Call Completed"
+			]
+		},
+		{
+			"type": "Outbound",
+			"name": "Outbound Campaign",
+			"description": "Sample Outbound Campaign",
+			"dialingMode": "Predictive",
+			"trainingMode": true,
+			"lists": [
+				"Outbound List"
+			],
+			"skills": [
+				"Outbound Skill"
+			],
+			"dispositions": [
+				"Call Completed"
+			]
+		},
+		{
+			"type": "Outbound",
+			"name": "Preview Campaign",
+			"description": "Sample Preview Campaign",
+			"dialingMode": "Preview",
+			"trainingMode": true,
+			"lists": [
+				"Preview List"
+			],
+			"skills": [
+				"Preview Skill"
+			],
+			"dispositions": [
+				"Call Completed"
+			]
+		}
+	]
+}
